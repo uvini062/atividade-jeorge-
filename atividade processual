@@ -1,0 +1,99 @@
+Aluno: marcos vinicius lima machado 
+Eng. de Soft. 2 Período
+
+Sistemas Operacionais
+
+Exercícios Teóricos – Processos:
+
+1. Qual a diferença entre programa e processo?
+
+Programa: conjunto de instruções armazenado em disco (estático).
+Processo: programa em execução, com recursos próprios (memória, registradores, etc).
+
+2. Quais são os estados de um processo e quando ocorrem as transições?
+
+Estados:
+Novo → quando é criado.
+Pronto → esperando CPU.
+Executando → está na CPU.
+Bloqueado → esperando I/O ou evento externo.
+Finalizado → terminou execução.
+
+Transições:
+Novo → Pronto: após ser admitido pelo SO.
+Pronto → Executando: escalonador escolhe o processo.
+Executando → Pronto: ocorre preempção.
+Executando → Bloqueado: espera por I/O.
+Bloqueado → Pronto: I/O ou evento finalizado.
+Executando → Finalizado: terminou.
+
+3. O que contém um Process Control Block (PCB)?
+
+Identificação do processo (PID).
+Estado atual.
+Registradores da CPU.
+Informações de escalonamento (prioridade, fila).
+Informações de memória (endereços, tabelas de páginas).
+Informações de I/O (arquivos abertos, dispositivos).
+
+4. O que acontece com os recursos de um processo quando ele termina?
+
+São liberados pelo SO: memória, CPU, arquivos abertos, dispositivos de E/S.
+
+5. Qual a diferença entre fork() e exec() no UNIX?
+
+fork(): cria um novo processo (cópia do processo pai).
+exec(): substitui a imagem do processo atual por um novo programa.
+
+6. Como funciona a hierarquia de processos em UNIX?
+
+Existe um processo inicial (init ou systemd) que é o ancestral de todos.
+Processos pais criam filhos via fork().
+Quando um processo pai morre, seus filhos são adotados pelo init.
+
+7. Compare memória compartilhada e troca de mensagens (IPC).
+
+Memória compartilhada: processos acessam a mesma região de memória. Mais rápida, mas exige sincronização (semáforos, mutex).
+Troca de mensagens: processos enviam mensagens via SO. Mais simples e seguro, mas mais lento.
+
+8. Cite exemplos de chamadas de sistema usadas em IPC.
+
+Memória compartilhada: shmget, shmat, shmdt.
+Mensagens: msgget, msgsnd, msgrcv.
+Pipes/Sockets: pipe, send, recv.
+
+9. Por que é importante que o sistema operacional faça gerenciamento de processos?
+
+Garante uso eficiente da CPU.
+Evita deadlocks e conflitos.
+Oferece concorrência, escalonamento e sincronização.
+
+10. Explique a diferença entre processos independentes e processos cooperativos.
+
+Independentes: não compartilham dados, não afetam uns aos outros.
+Cooperativos: compartilham dados e dependem de sincronização.
+
+11. O que é um processo zumbi em UNIX/Linux?
+
+Processo que já terminou, mas cujo pai ainda não coletou seu exit status.
+Fica listado como "defunct".
+
+12. Explique a diferença entre chamadas bloqueantes e não bloqueantes em IPC.
+
+Bloqueante: o processo fica parado até a operação terminar.
+Não bloqueante: o processo continua executando, mesmo que a operação não tenha finalizado.
+
+13. Qual a diferença entre processo pesado (process) e thread (processo leve)?
+
+Processo (pesado): possui espaço de memória independente, contexto completo.
+Thread (leve): compartilha memória e recursos com outras threads do mesmo processo, mas possui fluxo de execução próprio.
+
+14. Por que sistemas operacionais multiprogramados precisam de troca de contexto (context switch)?
+
+Para alternar entre processos, permitindo que vários pareçam rodar ao mesmo tempo.
+Salva o estado do processo atual e restaura o de outro.
+
+15. Cite vantagens e desvantagens da comunicação via memória compartilhada.
+
+Vantagens: muito rápida, evita overhead de mensagens.
+Desvantagens: precisa de mecanismos de sincronização para evitar condições de corrida, mais complexa de implementar.
