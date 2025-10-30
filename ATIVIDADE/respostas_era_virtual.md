@@ -1,5 +1,5 @@
-# 🖥️ Era Virtual — Fato Real  
-## Alternativas ao Windows NT/2000
+aluno: ,marcos vinicius lima machado 
+curso: eng. de software 
 
 **1. Por que companhias como a Egghead e a EarthLink estão optando por executar suas aplicações empresariais em duas ou em outras alternativas ao Windows NT, e não em esperar pelo Windows 2000?**  
 Essas empresas optaram por sistemas como Unix e Solaris porque o Windows NT não atendia suas necessidades de desempenho e estabilidade. O Windows 2000 ainda estava em desenvolvimento e não chegaria a tempo, o que obrigou as companhias a buscar soluções já maduras e confiáveis.
@@ -10,7 +10,7 @@ Porque o Unix oferece maior compatibilidade e estabilidade entre sistemas difere
 **3. Quais estratégias de negócios a Microsoft poderia adotar para recapturar as companhias que estão trocando o Windows NT? O que os concorrentes da Microsoft devem fazer para capitalizar essa oportunidade?**  
 A Microsoft poderia focar em melhorar a confiabilidade e o desempenho de seus sistemas, além de oferecer suporte mais amplo a aplicações corporativas. Já os concorrentes deveriam investir em tornar suas plataformas mais acessíveis e adaptáveis às necessidades empresariais, aproveitando a insatisfação dos clientes da Microsoft.
 
----
+
 
 ## Transformando Mainframes em Servidores de Rede
 
